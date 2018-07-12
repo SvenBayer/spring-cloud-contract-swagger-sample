@@ -1,0 +1,144 @@
+swagger: '2.0'
+info:
+  title: COFFEE-ROCKET-SERVICE
+  description: A service that provides coffee bean rockets, bean planets, and other things the coffeeverse has to offer.
+  version: '1.0'
+  termsOfService: 'urn:tos'
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0'
+host: svenbayer.blog
+schemes:
+  - https
+  - http
+basePath: /coffee-rocket-service/v1.0
+paths:
+  /takeoff:
+    post:
+      x-ignore: false
+      summary: Sends a coffee rocket to a bean planet and returns the bean planet.
+      tags:
+      - takeoff
+      - coffee
+      - bean
+      - rocket
+      description: API endpoint to send a coffee rocket to a bean planet and returns the bean planet.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: coffeeRocket
+          description: coffeeRocket
+          required: true
+          schema:
+            $ref: '#/definitions/CoffeeRocket'
+        - in: query
+          name: withWormhole
+          description: withWormhole
+          required: true
+          type: boolean
+          x-example: false
+        - in: query
+          name: viaHyperLoop
+          description: viaHyperLoop
+          required: true
+          type: boolean
+          x-example: false
+        - name: X-Request-ID
+          in: header
+          description: X-Request-ID
+          required: false
+          type: string
+          x-example: "123456"
+      responses:
+        '201':
+          description: Created
+          headers:
+            X-RateLimit-Limit:
+              type: integer
+              description: Request limit per hour.
+              x-example: 50
+          schema:
+            $ref: '#/definitions/BeanPlanet'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  Beanonaut:
+    type: object
+    properties:
+      name:
+        type: string
+        example: "Tom Hanks"
+      age:
+        type: number
+        example: 62
+    title: Beanonaut
+  BeanItinerary:
+    type: object
+    properties:
+      departure:
+        type: string
+        example: "Earth"
+      destination:
+        type: string
+        example: "Moon"
+    title: BeanItinerary
+  CoffeeRocket:
+    type: object
+    properties:
+      rocketName:
+        type: string
+        example: "Beanpollo 13"
+      itinerary:
+        $ref: '#/definitions/BeanItinerary'
+      fuel:
+        type: number
+        format: double
+        example: 300000.5
+      weight:
+        type: number
+        format: double
+        example: 45931.0
+      beanonauts:
+        type: array
+        items:
+          $ref: '#/definitions/Beanonaut'
+    title: CoffeeRocket
+  BeanPlanet:
+    type: object
+    properties:
+      name:
+        type: string
+        example: "Moon"
+      size:
+        type: number
+        example: 3474
+      asteroids:
+        type: array
+        items:
+          $ref: '#/definitions/BeanAsteroid'
+    title: BeanPlanet
+  BeanAsteroid:
+    type: object
+    properties:
+      name:
+        type: string
+        example: "Asteroid"
+      speed:
+        type: number
+        example: 2000
+      shape:
+        type: string
+        enum:
+          - 'ROUND'
+          - 'SQUARE'
+          - 'BEAN'
+        example: BEAN
+    title: BeanAsteroids
