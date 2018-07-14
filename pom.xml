@@ -8,12 +8,29 @@
     <artifactId>spring-cloud-contract-swagger-sample</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>swagger-coffee-contracts</module>
         <module>swagger-coffee-producer-simple</module>
         <module>swagger-coffee-producer-git</module>
-        <module>swagger-coffee-contracts</module>
+        <module>swagger-coffee-producer-params</module>
+        <module>swagger-coffee-producer-external</module>
+        <module>swagger-coffee-consumer</module>
+        <module>swagger-coffee-consumer-params</module>
     </modules>
     <packaging>pom</packaging>
 
     <name>Spring Cloud Contract Swagger Sample</name>
     <description>Demo project for Spring Boot with Spring Cloud Contract Swagger</description>
+
+    <url>https://github.com/SvenBayer/spring-cloud-contract-swagger</url>
+
+    <inceptionYear>2018</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>SvenBayer</id>
+            <name>Sven Bayer</name>
+            <email>svenbayer.blog@gmail.com</email>
+            <url>https://svenbayer.blog</url>
+        </developer>
+    </developers>
 </project>

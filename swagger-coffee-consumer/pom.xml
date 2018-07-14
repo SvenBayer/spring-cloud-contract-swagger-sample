@@ -21,7 +21,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.BUILD-SNAPSHOT</spring-cloud.version>
         <spring-cloud-contract.version>2.0.1.BUILD-SNAPSHOT</spring-cloud-contract.version>
-        <spring-cloud-swagger.version>1.0-SNAPSHOT</spring-cloud-swagger.version>
+        <spring-cloud-swagger.version>1.0.0.BUILD-SNAPSHOT</spring-cloud-swagger.version>
     </properties>
 
     <dependencies>
@@ -56,12 +56,21 @@
         <dependency>
             <groupId>de.svenbayer.blog</groupId>
             <artifactId>spring-cloud-contract-swagger</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.0.BUILD-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <!-- end::stubrunner[] -->
         <!-- remove::end[] -->
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencyManagement>
         <dependencies>
@@ -74,15 +83,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
     <profiles>
         <profile>
@@ -152,5 +152,4 @@
             </pluginRepositories>
         </profile>
     </profiles>
-
 </project>
