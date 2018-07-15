@@ -19,9 +19,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.BUILD-SNAPSHOT</spring-cloud.version>
-        <spring-cloud-contract.version>2.0.1.BUILD-SNAPSHOT</spring-cloud-contract.version>
-        <spring-cloud-swagger.version>1.0.0.BUILD-SNAPSHOT</spring-cloud-swagger.version>
+        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <spring-cloud-contract.version>2.0.0.RELEASE</spring-cloud-contract.version>
+        <spring-cloud-contract-swagger.version>1.0.0.RELEASE</spring-cloud-contract-swagger.version>
     </properties>
 
     <dependencies>
@@ -76,7 +76,7 @@
                     <dependency>
                         <groupId>de.svenbayer.blog</groupId>
                         <artifactId>spring-cloud-contract-swagger</artifactId>
-                        <version>1.0.0.BUILD-SNAPSHOT</version>
+                        <version>${spring-cloud-contract-swagger.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
