@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
-@AutoConfigureStubRunner(stubsMode = StubRunnerProperties.StubsMode.LOCAL, ids = "de.svenbayer.blog:swagger-coffee-contracts:+:stubs")
+@AutoConfigureStubRunner(stubsMode = StubRunnerProperties.StubsMode.LOCAL, ids = "blog.svenbayer:swagger-coffee-contracts:+:stubs")
 @DirtiesContext
 public class MissionLaunchControllerExternalTest extends AbstractContractTest {
 

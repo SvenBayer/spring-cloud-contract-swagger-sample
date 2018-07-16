@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @AutoConfigureStubRunner(stubsMode = StubRunnerProperties.StubsMode.REMOTE,
         repositoryRoot = "git://https://github.com/SvenBayer/spring-cloud-contract-swagger-contracts-git.git",
-        ids = { "de.svenbayer.blog:swagger-coffee-producer-git:1.0-SNAPSHOT"})
+        ids = { "blog.svenbayer:swagger-coffee-producer-git:1.0-SNAPSHOT"})
 @DirtiesContext
 public class MissionLaunchControllerGitTest extends AbstractContractTest {
 
