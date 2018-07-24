@@ -32,13 +32,13 @@ public class CoffeeverseController {
     @PostMapping(value = "/takeoff", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<BeanPlanet> takeoff(@RequestHeader(value = "X-Request-ID", required = false) String requestId,
                                               @RequestBody CoffeeRocket coffeeRocket,
-                                              @RequestParam String withWormhole,
+                                              @RequestParam(required = false) String withWormhole,
                                               @RequestParam boolean viaHyperLoop) {
         HttpHeaders headers = new HttpHeaders();
 
         int rateLimit = rateLimitService.getRateLimit();
         headers.add("X-RateLimit-Limit", String.valueOf(rateLimit));
-        BeanPlanet beanPlanet = coffeeverseService.takeoff(coffeeRocket, withWormhole != null, viaHyperLoop, requestId);
+        BeanPlanet beanPlanet = coffeeverseService.takeoff(coffeeRocket, withWormhole, viaHyperLoop, requestId);
         return new ResponseEntity<>(beanPlanet, headers, HttpStatus.CREATED);
     }
 }

@@ -17,6 +17,7 @@ import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.BDDMockito.given;
 
 /**
@@ -55,7 +56,7 @@ public class CoffeeverseRestBase {
         coffeeRocket.setWeight(1.1);
         coffeeRocket.setBeanonauts(Collections.singletonList(new Beanonaut("name", 1)));
 
-        given(coffeeverseService.takeoff(eq(coffeeRocket), eq(true), eq(true), eq("123456"))).willReturn(beanPlanet);
+        given(coffeeverseService.takeoff(eq(coffeeRocket), isNull(), eq(true), eq("123456"))).willReturn(beanPlanet);
         given(rateLimitService.getRateLimit()).willReturn(1);
         RestAssuredMockMvc.standaloneSetup(coffeeverseController);
     }
