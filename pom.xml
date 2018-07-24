@@ -11,6 +11,7 @@
         <module>swagger-coffee-contracts</module>
         <module>swagger-coffee-producer-simple</module>
         <module>swagger-coffee-producer-git</module>
+        <module>swagger-coffee-producer-json-params</module>
         <module>swagger-coffee-producer-params</module>
         <module>swagger-coffee-producer-external</module>
         <module>swagger-coffee-consumer</module>
