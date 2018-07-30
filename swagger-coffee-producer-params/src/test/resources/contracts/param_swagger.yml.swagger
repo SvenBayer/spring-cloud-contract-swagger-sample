@@ -58,9 +58,9 @@ paths:
           description: Created
           headers:
             X-RateLimit-Limit:
-              type: integer
+              type: string
               description: Request limit per hour.
-              x-example: 50
+              x-example: "50"
           schema:
             $ref: '#/definitions/BeanPlanet'
         '401':

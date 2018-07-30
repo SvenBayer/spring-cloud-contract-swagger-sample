@@ -21,7 +21,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <spring-cloud-contract.version>2.0.0.RELEASE</spring-cloud-contract.version>
-        <spring-cloud-contract-swagger.version>1.0.2.BUILD-SNAPSHOT</spring-cloud-contract-swagger.version>
+        <spring-cloud-contract-swagger.version>1.0.3.BUILD-SNAPSHOT</spring-cloud-contract-swagger.version>
     </properties>
 
     <dependencies>
@@ -147,6 +147,24 @@
                     <url>http://repo.spring.io/plugins-release-local</url>
                     <snapshots>
                         <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+        <profile>
+            <id>blog-svenbayer-snapshot</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>svenbayer-blogsvenbayer</id>
+                    <url>https://packagecloud.io/svenbayer/blogsvenbayer/maven2</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
                     </snapshots>
                 </pluginRepository>
             </pluginRepositories>
