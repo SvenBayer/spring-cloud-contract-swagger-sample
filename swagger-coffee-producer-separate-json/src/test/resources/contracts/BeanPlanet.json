@@ -1,0 +1,9 @@
+{
+  "asteroids" : [ {
+    "name" : "Beansteroid",
+    "shape" : "BEAN",
+    "speed" : 200
+  } ],
+  "size" : 20,
+  "name" : "Moon"
+}
