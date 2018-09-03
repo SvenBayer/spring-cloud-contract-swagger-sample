@@ -5,5 +5,7 @@
 
 This contains samples for the project [spring-cloud-contract-swagger](https://github.com/SvenBayer/spring-cloud-contract-swagger).
 
+Execute it with **mvn clean install** in the root folder.
+
 ## Further Information
 Read the blog about [Consumer Driven Contracts with Swagger](https://svenbayer.blog/cdc-with-swagger) for more information.
