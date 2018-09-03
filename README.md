@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/SvenBayer/spring-cloud-contract-swagger-sample/tree/master.svg?style=svg)](https://circleci.com/gh/SvenBayer/spring-cloud-contract-swagger-sample/tree/master)
+
 # spring-cloud-contract-swagger-sample
 **Samples for Spring Cloud Contract with Swagger specifications as contracts**
 
