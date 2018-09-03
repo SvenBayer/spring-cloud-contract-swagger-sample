@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>blog.svenbayer</groupId>
-    <artifactId>swagger-coffee-consumer-params</artifactId>
+    <artifactId>swagger-coffee-producer-separate-json</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -45,21 +45,13 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <!-- spring cloud contract test dependencies -->
         <!-- remove::start[] -->
-        <!-- tag::stubrunner[] -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
-            <version>${spring-cloud-contract.version}</version>
+            <artifactId>spring-cloud-starter-contract-verifier</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>blog.svenbayer</groupId>
-            <artifactId>spring-cloud-contract-swagger</artifactId>
-            <version>${spring-cloud-contract-swagger.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- end::stubrunner[] -->
         <!-- remove::end[] -->
     </dependencies>
 
@@ -69,6 +61,28 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <!-- remove::start[] -->
+            <!-- SPRING CLOUD CONTRACT -->
+            <plugin>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-contract-maven-plugin</artifactId>
+                <version>${spring-cloud-contract.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <baseClassForTests>com.example.CoffeeverseRestBase</baseClassForTests>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>blog.svenbayer</groupId>
+                        <artifactId>spring-cloud-contract-swagger</artifactId>
+                        <version>${spring-cloud-contract-swagger.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <!-- SPRING CLOUD CONTRACT -->
+            <!-- remove::end[] -->
+
         </plugins>
     </build>
 
